@@ -8,12 +8,14 @@ void menu() {
 
     bool flag = 1;
     while(true) {
+       bool flag = 1;
+        char filePath[100];
+        char filePath_fixed[100];
         char c[10];
         std::cin >> c;
         std::cin.ignore();
             if (!strcmp(c, "open")) {
-                char filePath[100];
-                char filePath_fixed[100];
+
                 std::cin >> filePath;
                 int len = strlen(filePath);
                 for(int i = len; i > 0; i--) {
@@ -26,7 +28,6 @@ void menu() {
                     }else
                         strcpy(filePath_fixed,filePath);
                 }
-                ;
                 std::fstream filestr;
                 filestr.open(filePath);
                 if (filestr.is_open()) {
@@ -38,13 +39,11 @@ void menu() {
                         return;
                     } else {
                         std::cerr << "File not found!\n";
-                        std::clog << "Creating new file " << filePath << "...\n";
+                        std::clog << "Creating new file " << filePath_fixed << "...\n";
                         std::ofstream createFile(filePath);
                     }
 
             }
-
-
         }
         if (!strcmp(c, "exit"))
             return;
@@ -59,6 +58,11 @@ void menu() {
             std::cout << filePath_fixed;
             std::ofstream createFile(filePath_fixed);
         }
+        if (!strcmp(c, "close")){
+            std::cout << "Successfully closed " << filePath_fixed << std::endl;
+            flag = 1;
+        }
+
     }
 }
 int main() {
