@@ -9,8 +9,8 @@
 #include <cstdlib>
 void Rectangle::setInfo(std::string line) {
     std::string word;
+    std::string line_copy = line;
     std::istringstream inputStream(line);
-    //std::cout << line << std::endl;
     while (inputStream >> word) {
         if (word.find("x=") != std::string::npos) {
             std::string number;
@@ -46,13 +46,11 @@ void Rectangle::setInfo(std::string line) {
             }
             height = atof(number.c_str());
         }
-
-
     }
-    std::cout << x << ' ' << y << ' ' << width << ' ' << height;
+    Figure::setInfo(line_copy);
 }
 
 void Rectangle::print() const {
-    std::cout << "rectangle" << x << ' ' << y << ' ' << width << ' ' << height << ' ';
+    std::cout << "rectangle " << x << ' ' << y << ' ' << width << ' ' << height << ' ';
     Figure::print();
 }

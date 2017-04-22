@@ -10,10 +10,10 @@ class Figure {
 protected:
     std::string fill;
     std::string stroke;
-    unsigned int strokeWidth;
-    void setInfo(std::string line);
+    int strokeWidth;
+    virtual void setInfo(std::string line);
 public:
-    void print() const;
+    virtual void print() const;
 };
 
 

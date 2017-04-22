@@ -4,8 +4,8 @@
 #include <string>
 #include "Rectangle.h"
 int count_rect;
+Rectangle* rect;
 void getInfo(std::fstream& filestr) {
-    Rectangle* rect;
     std::string word;
     std::string attributes;
     std::string line;
@@ -79,10 +79,11 @@ int main() {
             }
         }
         if(!strcmp(c,"print")){
-            if(opened)
-            //for(int i = 0; i <)
+            if(opened) {
                 std::cout << "Printing...\n";
-            else
+                for (int i = 0; i < count_rect; i++)
+                     rect[i].print();
+            } else
                 std::cout << "Open a file first!\n";
         }
         if (!strcmp(c, "exit")) {

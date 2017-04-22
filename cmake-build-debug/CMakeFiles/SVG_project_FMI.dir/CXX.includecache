@@ -11,6 +11,10 @@ Figure.h
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
 iostream
 -
+sstream
+-
+cstdlib
+-
 
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
 string

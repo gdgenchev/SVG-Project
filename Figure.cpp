@@ -4,8 +4,36 @@
 
 #include "Figure.h"
 #include <iostream>
+#include <sstream>
+#include <cstdlib>
 void Figure::setInfo(std::string line) {
-
+   // std::cout << line;
+    std::string word;
+    std::istringstream inputStream(line);
+    while (inputStream >> word) {
+        if(word.find("fill=") != std::string::npos) {
+            std::string color;
+            int t = 0;
+            for (int i = 6; i < word.size() - 1; i++)
+                color += word[i];
+            fill = color;
+        }
+        if(word.find("stroke=") != std::string::npos) {
+            std::string color;
+            for (int i = 8; i < word.size() - 1; i++) {
+                std::cout << word[i] << ' ';
+                color += word[i];
+            }
+            stroke = color;
+        }
+    if(word.find("stroke-width=") != std::string::npos){
+            std::string number;
+            int t = 0;
+            for (int i = 14; i < word.size() - 1; i++)
+                number[t++] = word[i];
+            strokeWidth = atoi(number.c_str());
+        }
+    }
 }
 
 void Figure::print() const {
