@@ -9,18 +9,24 @@
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp
 Figure.h
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+iostream
+-
 
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
 string
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.cpp
-Rectangular.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp
+Rectangle.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
 iostream
 -
+sstream
+-
+cstring
+-
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
 string
 -
 Figure.h
@@ -35,6 +41,6 @@ cstring
 -
 string
 -
-Rectangular.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
+Rectangle.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
 

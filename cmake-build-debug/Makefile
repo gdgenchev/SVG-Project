@@ -149,32 +149,32 @@ Figure.cpp.s:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s
 .PHONY : Figure.cpp.s
 
-Rectangular.obj: Rectangular.cpp.obj
+Rectangle.obj: Rectangle.cpp.obj
 
-.PHONY : Rectangular.obj
+.PHONY : Rectangle.obj
 
 # target to build an object file
-Rectangular.cpp.obj:
-	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj
-.PHONY : Rectangular.cpp.obj
+Rectangle.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj
+.PHONY : Rectangle.cpp.obj
 
-Rectangular.i: Rectangular.cpp.i
+Rectangle.i: Rectangle.cpp.i
 
-.PHONY : Rectangular.i
+.PHONY : Rectangle.i
 
 # target to preprocess a source file
-Rectangular.cpp.i:
-	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.i
-.PHONY : Rectangular.cpp.i
+Rectangle.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.i
+.PHONY : Rectangle.cpp.i
 
-Rectangular.s: Rectangular.cpp.s
+Rectangle.s: Rectangle.cpp.s
 
-.PHONY : Rectangular.s
+.PHONY : Rectangle.s
 
 # target to generate assembly for a file
-Rectangular.cpp.s:
-	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.s
-.PHONY : Rectangular.cpp.s
+Rectangle.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.s
+.PHONY : Rectangle.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -215,9 +215,9 @@ help:
 	@echo ... Figure.obj
 	@echo ... Figure.i
 	@echo ... Figure.s
-	@echo ... Rectangular.obj
-	@echo ... Rectangular.i
-	@echo ... Rectangular.s
+	@echo ... Rectangle.obj
+	@echo ... Rectangle.i
+	@echo ... Rectangle.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

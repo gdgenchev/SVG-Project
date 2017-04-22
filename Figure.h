@@ -12,6 +12,8 @@ protected:
     std::string stroke;
     unsigned int strokeWidth;
     void setInfo(std::string line);
+public:
+    void print() const;
 };
 
 

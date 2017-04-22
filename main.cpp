@@ -2,13 +2,14 @@
 #include <fstream>
 #include <cstring>
 #include <string>
-#include "Rectangular.h"
+#include "Rectangle.h"
 void getInfo(std::fstream& filestr) {
-    Rectangular rect;
+    Rectangle rect[2];
     std::string word;
     std::string attributes;
     std::string line;
     bool flag = 0;
+    int i = 0;
     while (!filestr.eof()) {
         std::getline(filestr, line);
 
@@ -18,12 +19,12 @@ void getInfo(std::fstream& filestr) {
             flag = 1;
         }
         if(line.find("<rect") != std::string::npos && line.find("/>") != std::string::npos) {
-            rect.setInfo(line);
+            rect[0].setInfo(line);
             flag = 0;
         }
         if (flag && line.find("/>") != std::string::npos) {
             attributes += line;
-            rect.setInfo(attributes);
+            rect[i++].setInfo(attributes);
         }
     }
 }

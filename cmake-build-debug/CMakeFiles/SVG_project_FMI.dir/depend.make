@@ -4,11 +4,11 @@
 CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: ../Figure.cpp
 CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: ../Figure.h
 
-CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj: ../Figure.h
-CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj: ../Rectangular.cpp
-CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj: ../Rectangular.h
+CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj: ../Figure.h
+CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj: ../Rectangle.cpp
+CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj: ../Rectangle.h
 
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Figure.h
-CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Rectangular.h
+CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Rectangle.h
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../main.cpp
 

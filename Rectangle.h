@@ -6,10 +6,11 @@
 #define SVG_PROJECT_FMI_RECTANGULAR_H
 #include<string>
 #include "Figure.h"
-class Rectangular : public Figure {
+class Rectangle : public Figure {
     double x,y,width,height;
 public:
     void setInfo(std::string line);
+    void print() const;
 };
 
 

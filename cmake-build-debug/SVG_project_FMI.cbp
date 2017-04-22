@@ -88,10 +88,10 @@
 		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h">
 			<Option target="SVG_project_FMI"/>
 		</Unit>
-		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.cpp">
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp">
 			<Option target="SVG_project_FMI"/>
 		</Unit>
-		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h">
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h">
 			<Option target="SVG_project_FMI"/>
 		</Unit>
 		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/main.cpp">

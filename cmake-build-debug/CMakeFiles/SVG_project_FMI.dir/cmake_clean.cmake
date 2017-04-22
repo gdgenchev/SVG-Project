@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SVG_project_FMI.dir/main.cpp.obj"
-  "CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj"
+  "CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj"
   "CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj"
   "SVG_project_FMI.pdb"
   "SVG_project_FMI.exe"
