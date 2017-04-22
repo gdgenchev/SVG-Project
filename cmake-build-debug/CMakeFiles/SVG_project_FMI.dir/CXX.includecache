@@ -25,6 +25,8 @@ sstream
 -
 cstring
 -
+cstdlib
+-
 
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
 string

@@ -3,27 +3,33 @@
 #include <cstring>
 #include <string>
 #include "Rectangle.h"
+int count_rect;
 void getInfo(std::fstream& filestr) {
-    Rectangle rect[2];
+    Rectangle* rect;
     std::string word;
     std::string attributes;
     std::string line;
+    std::string line1;
     bool flag = 0;
     int i = 0;
-    while (!filestr.eof()) {
-        std::getline(filestr, line);
-
-        if (line.find("<rect") != std::string::npos) {
-            attributes = line;
-            //std::cout << attributes << std::endl;
+    while (std::getline(filestr, line)) {
+        if (line.find("<rect") != std::string::npos) count_rect++;
+    }
+    filestr.clear();
+    filestr.seekg(0,filestr.beg);
+    std::cout << count_rect;
+    rect = new Rectangle[count_rect];
+    while (std::getline(filestr, line1)) {
+        if (line1.find("<rect") != std::string::npos) {
+            attributes = line1;
             flag = 1;
         }
-        if(line.find("<rect") != std::string::npos && line.find("/>") != std::string::npos) {
-            rect[0].setInfo(line);
+        if(line1.find("<rect") != std::string::npos && line1.find("/>") != std::string::npos) {
+            rect[i++].setInfo(line1);
             flag = 0;
         }
-        if (flag && line.find("/>") != std::string::npos) {
-            attributes += line;
+        if (flag && line1.find("/>") != std::string::npos) {
+            attributes += line1;
             rect[i++].setInfo(attributes);
         }
     }
@@ -74,7 +80,7 @@ int main() {
         }
         if(!strcmp(c,"print")){
             if(opened)
-           //TO DO figure[i].print();
+            //for(int i = 0; i <)
                 std::cout << "Printing...\n";
             else
                 std::cout << "Open a file first!\n";
