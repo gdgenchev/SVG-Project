@@ -80,19 +80,71 @@ CMakeFiles/SVG_project_FMI.dir/main.cpp.obj.provides: CMakeFiles/SVG_project_FMI
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj.provides.build: CMakeFiles/SVG_project_FMI.dir/main.cpp.obj
 
 
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj: CMakeFiles/SVG_project_FMI.dir/flags.make
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj: ../Rectangular.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SVG_project_FMI.dir\Rectangular.cpp.obj -c "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Rectangular.cpp"
+
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Rectangular.cpp" > CMakeFiles\SVG_project_FMI.dir\Rectangular.cpp.i
+
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Rectangular.cpp" -o CMakeFiles\SVG_project_FMI.dir\Rectangular.cpp.s
+
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.requires:
+
+.PHONY : CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.requires
+
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.provides: CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.provides.build
+.PHONY : CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.provides
+
+CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.provides.build: CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj
+
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: CMakeFiles/SVG_project_FMI.dir/flags.make
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: ../Figure.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SVG_project_FMI.dir\Figure.cpp.obj -c "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Figure.cpp"
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SVG_project_FMI.dir/Figure.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Figure.cpp" > CMakeFiles\SVG_project_FMI.dir\Figure.cpp.i
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\Figure.cpp" -o CMakeFiles\SVG_project_FMI.dir\Figure.cpp.s
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.requires:
+
+.PHONY : CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.requires
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.provides: CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.provides.build
+.PHONY : CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.provides
+
+CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.provides.build: CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj
+
+
 # Object files for target SVG_project_FMI
 SVG_project_FMI_OBJECTS = \
-"CMakeFiles/SVG_project_FMI.dir/main.cpp.obj"
+"CMakeFiles/SVG_project_FMI.dir/main.cpp.obj" \
+"CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj" \
+"CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj"
 
 # External object files for target SVG_project_FMI
 SVG_project_FMI_EXTERNAL_OBJECTS =
 
 SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/main.cpp.obj
+SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj
+SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj
 SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/build.make
 SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/linklibs.rsp
 SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/objects1.rsp
 SVG_project_FMI.exe: CMakeFiles/SVG_project_FMI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SVG_project_FMI.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SVG_project_FMI.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SVG_project_FMI.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -101,6 +153,8 @@ CMakeFiles/SVG_project_FMI.dir/build: SVG_project_FMI.exe
 .PHONY : CMakeFiles/SVG_project_FMI.dir/build
 
 CMakeFiles/SVG_project_FMI.dir/requires: CMakeFiles/SVG_project_FMI.dir/main.cpp.obj.requires
+CMakeFiles/SVG_project_FMI.dir/requires: CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj.requires
+CMakeFiles/SVG_project_FMI.dir/requires: CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj.requires
 
 .PHONY : CMakeFiles/SVG_project_FMI.dir/requires
 

@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp
+Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+string
+-
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.cpp
+Rectangular.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
+iostream
+-
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
+string
+-
+Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/main.cpp
 iostream
 -
@@ -15,4 +35,6 @@ cstring
 -
 string
 -
+Rectangular.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangular.h
 

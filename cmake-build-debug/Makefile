@@ -122,6 +122,60 @@ SVG_project_FMI/fast:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/build
 .PHONY : SVG_project_FMI/fast
 
+Figure.obj: Figure.cpp.obj
+
+.PHONY : Figure.obj
+
+# target to build an object file
+Figure.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj
+.PHONY : Figure.cpp.obj
+
+Figure.i: Figure.cpp.i
+
+.PHONY : Figure.i
+
+# target to preprocess a source file
+Figure.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.i
+.PHONY : Figure.cpp.i
+
+Figure.s: Figure.cpp.s
+
+.PHONY : Figure.s
+
+# target to generate assembly for a file
+Figure.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s
+.PHONY : Figure.cpp.s
+
+Rectangular.obj: Rectangular.cpp.obj
+
+.PHONY : Rectangular.obj
+
+# target to build an object file
+Rectangular.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.obj
+.PHONY : Rectangular.cpp.obj
+
+Rectangular.i: Rectangular.cpp.i
+
+.PHONY : Rectangular.i
+
+# target to preprocess a source file
+Rectangular.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.i
+.PHONY : Rectangular.cpp.i
+
+Rectangular.s: Rectangular.cpp.s
+
+.PHONY : Rectangular.s
+
+# target to generate assembly for a file
+Rectangular.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Rectangular.cpp.s
+.PHONY : Rectangular.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +212,12 @@ help:
 	@echo ... edit_cache
 	@echo ... SVG_project_FMI
 	@echo ... rebuild_cache
+	@echo ... Figure.obj
+	@echo ... Figure.i
+	@echo ... Figure.s
+	@echo ... Rectangular.obj
+	@echo ... Rectangular.i
+	@echo ... Rectangular.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
