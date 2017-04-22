@@ -14,13 +14,16 @@ Line* line;
 void getInfo(std::fstream& filestr) {
     count_rect = 0;
     count_circ = 0;
+    count_line = 0;
     std::string word;
     std::string attributes;
     std::string line1;
     bool flag_rect = 0;
     bool flag_circ = 0;
+    bool flag_line = 0;
     int i = 0;
     int p = 0;
+    int t = 0;
     while (std::getline(filestr, line1)) {
         if (line1.find("<rect") != std::string::npos) count_rect++;
         if (line1.find("<circle") != std::string::npos) count_circ++;
@@ -33,7 +36,7 @@ void getInfo(std::fstream& filestr) {
     line = new Line[count_line];
     while (std::getline(filestr, line1)) {
         if (line1.find("<rect") != std::string::npos) {
-            attributes = line1;
+            attributes += line1;
             flag_rect = 1;
 
             if (line1.find("<rect") != std::string::npos && line1.find("/>") != std::string::npos) {
@@ -51,7 +54,7 @@ void getInfo(std::fstream& filestr) {
 
 
         if (line1.find("<circle") != std::string::npos) {
-            attributes = line1;
+            attributes += line1;
             flag_circ = 1;
 
             if (line1.find("<circle") != std::string::npos && line1.find("/>") != std::string::npos) {
@@ -63,6 +66,24 @@ void getInfo(std::fstream& filestr) {
             attributes += line1;
             circ[p++].setInfo(attributes);
             flag_circ = 0;
+        }
+
+
+        if(line1.find("<g stroke") != std::string::npos)
+            attributes += line1;
+        if (line1.find("<line") != std::string::npos) {
+            attributes += line1;
+            flag_line = 1;
+
+            if (line1.find("<line") != std::string::npos && line1.find("/>") != std::string::npos) {
+                line[t++].setInfo(line1);
+                flag_line = 0;
+            }
+        }
+        if (flag_line && line1.find("/>") != std::string::npos) {
+            attributes += line1;
+            line[t++].setInfo(attributes);
+            flag_line = 0;
         }
     }
 }
@@ -120,11 +141,11 @@ int main() {
                     std::cout << count++;
                     circ[i].print();
                 }
-                /*
+
                 for (int i = 0; i < count_line; i++) {
                     std::cout << count++;
                     line[i].print();
-                }*/
+                }
             } else
                 std::cout << "Open a file first!\n";
         }
@@ -161,5 +182,6 @@ int main() {
     }
     delete[]rect;
     delete[]circ;
+    delete[]line;
     return 0;
 }

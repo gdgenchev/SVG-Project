@@ -37,6 +37,12 @@ string
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.cpp
 Line.h
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+cstdlib
+-
+iostream
+-
+sstream
+-
 
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
 Figure.h

@@ -7,7 +7,11 @@
 #include "Figure.h"
 
 class Line : public Figure {
-
+    double x1,y1,x2,y2;
+    int strokeWidth;
+public:
+    void setInfo(std::string line);
+    void print() const;
 };
 
 
