@@ -14,35 +14,31 @@ void Rectangle::setInfo(std::string line) {
     while (inputStream >> word) {
         if (word.find("x=") != std::string::npos) {
             std::string number;
-            int t = 0;
             for (int i = 3; i < word.size() - 1; i++) {
-                number[t++] = word[i];
+                number += word[i];
             }
             x = atof(number.c_str());
         }
         if (word.find("y=") != std::string::npos) {
             std::string number;
-            int t = 0;
             for (int i = 3; i < word.size() - 1; i++) {
-                number[t++] = word[i];
+                number += word[i];
             }
             y = atof(number.c_str());
         }
         if (word.find("width=") != std::string::npos) {
             if(word.find("-width") == std::string::npos) {
                 std::string number;
-                int t = 0;
                 for (int i = 7; i < word.size() - 1; i++) {
-                    number[t++] = word[i];
+                    number += word[i];
                 }
                 width = atof(number.c_str());
             }
         }
         if (word.find("height=") != std::string::npos) {
             std::string number;
-            int t = 0;
             for (int i = 8; i < word.size() - 1; i++) {
-                number[t++] = word[i];
+                number += word[i];
             }
             height = atof(number.c_str());
         }
@@ -51,6 +47,6 @@ void Rectangle::setInfo(std::string line) {
 }
 
 void Rectangle::print() const {
-    std::cout << "rectangle " << x << ' ' << y << ' ' << width << ' ' << height << ' ';
+    std::cout << ". rectangle " << x << ' ' << y << ' ' << width << ' ' << height << ' ';
     Figure::print();
 }

@@ -3,34 +3,66 @@
 #include <cstring>
 #include <string>
 #include "Rectangle.h"
+#include "Circle.h"
+#include "Line.h"
 int count_rect;
+int count_circ;
+int count_line;
 Rectangle* rect;
+Circle* circ;
+Line* line;
 void getInfo(std::fstream& filestr) {
+    count_rect = 0;
+    count_circ = 0;
     std::string word;
     std::string attributes;
-    std::string line;
     std::string line1;
-    bool flag = 0;
+    bool flag_rect = 0;
+    bool flag_circ = 0;
     int i = 0;
-    while (std::getline(filestr, line)) {
-        if (line.find("<rect") != std::string::npos) count_rect++;
+    int p = 0;
+    while (std::getline(filestr, line1)) {
+        if (line1.find("<rect") != std::string::npos) count_rect++;
+        if (line1.find("<circle") != std::string::npos) count_circ++;
+        if (line1.find("<line") != std::string::npos) count_line++;
     }
     filestr.clear();
     filestr.seekg(0,filestr.beg);
-    std::cout << count_rect;
     rect = new Rectangle[count_rect];
+    circ = new Circle[count_circ];
+    line = new Line[count_line];
     while (std::getline(filestr, line1)) {
         if (line1.find("<rect") != std::string::npos) {
             attributes = line1;
-            flag = 1;
+            flag_rect = 1;
+
+            if (line1.find("<rect") != std::string::npos && line1.find("/>") != std::string::npos) {
+                rect[i++].setInfo(line1);
+                flag_rect = 0;
+            }
         }
-        if(line1.find("<rect") != std::string::npos && line1.find("/>") != std::string::npos) {
-            rect[i++].setInfo(line1);
-            flag = 0;
-        }
-        if (flag && line1.find("/>") != std::string::npos) {
+        if (flag_rect && line1.find("/>") != std::string::npos) {
             attributes += line1;
             rect[i++].setInfo(attributes);
+            flag_rect = 0;
+        }
+
+
+
+
+        if (line1.find("<circle") != std::string::npos) {
+            attributes = line1;
+            flag_circ = 1;
+
+            if (line1.find("<circle") != std::string::npos && line1.find("/>") != std::string::npos) {
+                circ[p++].setInfo(line1);
+                flag_circ = 0;
+            }
+        }
+        if (flag_circ && line1.find("/>") != std::string::npos) {
+            attributes += line1;
+            circ[p++].setInfo(attributes);
+            flag_circ = 0;
         }
     }
 }
@@ -40,13 +72,11 @@ int main() {
     std::cout << "List of available commands:\n";
     std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n5)exit\n";
     while(true) {
-        bool flag = 1;
         char filePath[100];
         char filePath_fixed[100];
         std::fstream filestr;
         char c[10];
         std::cin >> c;
-        std::cin.ignore();
         if (!strcmp(c, "open")) {
             opened = 1;
             std::cin >> filePath;
@@ -80,9 +110,21 @@ int main() {
         }
         if(!strcmp(c,"print")){
             if(opened) {
+                int count = 1;
                 std::cout << "Printing...\n";
-                for (int i = 0; i < count_rect; i++)
-                     rect[i].print();
+                for (int i = 0; i < count_rect; i++) {
+                    std::cout << count++;
+                    rect[i].print();
+                }
+                for (int i = 0; i < count_circ; i++) {
+                    std::cout << count++;
+                    circ[i].print();
+                }
+                /*
+                for (int i = 0; i < count_line; i++) {
+                    std::cout << count++;
+                    line[i].print();
+                }*/
             } else
                 std::cout << "Open a file first!\n";
         }
@@ -108,10 +150,16 @@ int main() {
                 std::cout << "Open a file first!\n";
         }
         if (!strcmp(c, "close")){
-            filestr.close();
-            opened = 0;
-            std::cout << "Successfully closed " << filePath_fixed << std::endl;
+            if(opened) {
+                filestr.close();
+                opened = 0;
+                std::cout << "Successfully closed " << filePath_fixed << std::endl;
+            }else
+                std::cout << "You should open a file first!\n";
         }
+
     }
+    delete[]rect;
+    delete[]circ;
     return 0;
 }

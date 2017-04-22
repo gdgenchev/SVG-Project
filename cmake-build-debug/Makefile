@@ -122,6 +122,33 @@ SVG_project_FMI/fast:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/build
 .PHONY : SVG_project_FMI/fast
 
+Circle.obj: Circle.cpp.obj
+
+.PHONY : Circle.obj
+
+# target to build an object file
+Circle.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Circle.cpp.obj
+.PHONY : Circle.cpp.obj
+
+Circle.i: Circle.cpp.i
+
+.PHONY : Circle.i
+
+# target to preprocess a source file
+Circle.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Circle.cpp.i
+.PHONY : Circle.cpp.i
+
+Circle.s: Circle.cpp.s
+
+.PHONY : Circle.s
+
+# target to generate assembly for a file
+Circle.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Circle.cpp.s
+.PHONY : Circle.cpp.s
+
 Figure.obj: Figure.cpp.obj
 
 .PHONY : Figure.obj
@@ -148,6 +175,33 @@ Figure.s: Figure.cpp.s
 Figure.cpp.s:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s
 .PHONY : Figure.cpp.s
+
+Line.obj: Line.cpp.obj
+
+.PHONY : Line.obj
+
+# target to build an object file
+Line.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj
+.PHONY : Line.cpp.obj
+
+Line.i: Line.cpp.i
+
+.PHONY : Line.i
+
+# target to preprocess a source file
+Line.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Line.cpp.i
+.PHONY : Line.cpp.i
+
+Line.s: Line.cpp.s
+
+.PHONY : Line.s
+
+# target to generate assembly for a file
+Line.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Line.cpp.s
+.PHONY : Line.cpp.s
 
 Rectangle.obj: Rectangle.cpp.obj
 
@@ -212,9 +266,15 @@ help:
 	@echo ... edit_cache
 	@echo ... SVG_project_FMI
 	@echo ... rebuild_cache
+	@echo ... Circle.obj
+	@echo ... Circle.i
+	@echo ... Circle.s
 	@echo ... Figure.obj
 	@echo ... Figure.i
 	@echo ... Figure.s
+	@echo ... Line.obj
+	@echo ... Line.i
+	@echo ... Line.s
 	@echo ... Rectangle.obj
 	@echo ... Rectangle.i
 	@echo ... Rectangle.s

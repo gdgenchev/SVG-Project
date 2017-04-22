@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-bu
 CMakeFiles/SVG_project_FMI.dir/all:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/depend
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4 "Built target SVG_project_FMI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target SVG_project_FMI"
 .PHONY : CMakeFiles/SVG_project_FMI.dir/all
 
 # Include target in all.
@@ -75,7 +75,7 @@ all: CMakeFiles/SVG_project_FMI.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SVG_project_FMI.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" 6
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/SVG_project_FMI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/SVG_project_FMI.dir/rule

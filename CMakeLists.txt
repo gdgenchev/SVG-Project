@@ -3,5 +3,5 @@ project(SVG_project_FMI)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp Rectangle.cpp Rectangle.h Figure.cpp Figure.h)
+set(SOURCE_FILES main.cpp Rectangle.cpp Rectangle.h Figure.cpp Figure.h Circle.cpp Circle.h Line.cpp Line.h)
 add_executable(SVG_project_FMI ${SOURCE_FILES})

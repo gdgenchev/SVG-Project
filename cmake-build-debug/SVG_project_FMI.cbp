@@ -82,10 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.cpp">
+			<Option target="SVG_project_FMI"/>
+		</Unit>
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h">
+			<Option target="SVG_project_FMI"/>
+		</Unit>
 		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp">
 			<Option target="SVG_project_FMI"/>
 		</Unit>
 		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h">
+			<Option target="SVG_project_FMI"/>
+		</Unit>
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.cpp">
+			<Option target="SVG_project_FMI"/>
+		</Unit>
+		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h">
 			<Option target="SVG_project_FMI"/>
 		</Unit>
 		<Unit filename="C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp">

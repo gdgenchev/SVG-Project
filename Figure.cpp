@@ -13,7 +13,6 @@ void Figure::setInfo(std::string line) {
     while (inputStream >> word) {
         if(word.find("fill=") != std::string::npos) {
             std::string color;
-            int t = 0;
             for (int i = 6; i < word.size() - 1; i++)
                 color += word[i];
             fill = color;
@@ -21,16 +20,14 @@ void Figure::setInfo(std::string line) {
         if(word.find("stroke=") != std::string::npos) {
             std::string color;
             for (int i = 8; i < word.size() - 1; i++) {
-                std::cout << word[i] << ' ';
                 color += word[i];
             }
             stroke = color;
         }
     if(word.find("stroke-width=") != std::string::npos){
             std::string number;
-            int t = 0;
             for (int i = 14; i < word.size() - 1; i++)
-                number[t++] = word[i];
+                number += word[i];
             strokeWidth = atoi(number.c_str());
         }
     }

@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.cpp
+Circle.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+cstdlib
+-
+sstream
+-
+iostream
+-
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp
 Figure.h
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
@@ -19,6 +33,14 @@ cstdlib
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
 string
 -
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.cpp
+Line.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
 
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp
 Rectangle.h
@@ -49,4 +71,8 @@ string
 -
 Rectangle.h
 C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
+Circle.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+Line.h
+C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
 
