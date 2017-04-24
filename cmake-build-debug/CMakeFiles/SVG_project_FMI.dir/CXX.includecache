@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.cpp
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.cpp
 Circle.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.h
 cstdlib
 -
 sstream
@@ -16,13 +16,13 @@ sstream
 iostream
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.h
 Figure.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.cpp
 Figure.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 iostream
 -
 sstream
@@ -30,13 +30,23 @@ sstream
 cstdlib
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 string
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.cpp
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.cpp
+FigureCollection.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.h
+iostream
+-
+
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.h
+Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
+
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Line.cpp
 Line.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Line.h
 cstdlib
 -
 iostream
@@ -44,13 +54,13 @@ iostream
 sstream
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Line.h
 Figure.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Rectangle.cpp
 Rectangle.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Rectangle.h
 iostream
 -
 sstream
@@ -60,13 +70,13 @@ cstring
 cstdlib
 -
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Rectangle.h
 string
 -
 Figure.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/main.cpp
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/main.cpp
 iostream
 -
 fstream
@@ -76,9 +86,11 @@ cstring
 string
 -
 Rectangle.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Rectangle.h
 Circle.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.h
 Line.h
-C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/Line.h
+FigureCollection.h
+C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.h
 

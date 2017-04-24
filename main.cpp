@@ -5,13 +5,15 @@
 #include "Rectangle.h"
 #include "Circle.h"
 #include "Line.h"
+#include "FigureCollection.h"
 int count_rect;
 int count_circ;
 int count_line;
-Rectangle* rect;
-Circle* circ;
-Line* line;
+FigureCollection figc;
 void getInfo(std::fstream& filestr) {
+    Rectangle* rect= new Rectangle;
+    Circle* circ = new Circle;
+    Line* line = new Line;
     count_rect = 0;
     count_circ = 0;
     count_line = 0;
@@ -31,25 +33,23 @@ void getInfo(std::fstream& filestr) {
     }
     filestr.clear();
     filestr.seekg(0,filestr.beg);
-    rect = new Rectangle[count_rect];
-    circ = new Circle[count_circ];
-    line = new Line[count_line];
     while (std::getline(filestr, line1)) {
         if (line1.find("<rect") != std::string::npos) {
             attributes += line1;
             flag_rect = 1;
 
             if (line1.find("<rect") != std::string::npos && line1.find("/>") != std::string::npos) {
-                rect[i++].setInfo(line1);
+                rect->setInfo(line1);
+                figc.addEntry(rect);
                 flag_rect = 0;
             }
         }
         if (flag_rect && line1.find("/>") != std::string::npos) {
             attributes += line1;
-            rect[i++].setInfo(attributes);
+            rect->setInfo(attributes);
+            figc.addEntry(rect);
             flag_rect = 0;
         }
-
 
 
 
@@ -58,13 +58,15 @@ void getInfo(std::fstream& filestr) {
             flag_circ = 1;
 
             if (line1.find("<circle") != std::string::npos && line1.find("/>") != std::string::npos) {
-                circ[p++].setInfo(line1);
+                circ->setInfo(line1);
+                figc.addEntry(circ);
                 flag_circ = 0;
             }
         }
         if (flag_circ && line1.find("/>") != std::string::npos) {
             attributes += line1;
-            circ[p++].setInfo(attributes);
+            circ->setInfo(attributes);
+            figc.addEntry(circ);
             flag_circ = 0;
         }
 
@@ -76,16 +78,19 @@ void getInfo(std::fstream& filestr) {
             flag_line = 1;
 
             if (line1.find("<line") != std::string::npos && line1.find("/>") != std::string::npos) {
-                line[t++].setInfo(line1);
+                line->setInfo(line1);
+                figc.addEntry(line);
                 flag_line = 0;
             }
         }
         if (flag_line && line1.find("/>") != std::string::npos) {
             attributes += line1;
-            line[t++].setInfo(attributes);
+            line->setInfo(attributes);
+            figc.addEntry(line);
             flag_line = 0;
         }
     }
+
 }
 
 int main() {
@@ -133,19 +138,8 @@ int main() {
             if(opened) {
                 int count = 1;
                 std::cout << "Printing...\n";
-                for (int i = 0; i < count_rect; i++) {
-                    std::cout << count++;
-                    rect[i].print();
-                }
-                for (int i = 0; i < count_circ; i++) {
-                    std::cout << count++;
-                    circ[i].print();
-                }
+                figc.printToConsole();
 
-                for (int i = 0; i < count_line; i++) {
-                    std::cout << count++;
-                    line[i].print();
-                }
             } else
                 std::cout << "Open a file first!\n";
         }
@@ -180,8 +174,6 @@ int main() {
         }
 
     }
-    delete[]rect;
-    delete[]circ;
-    delete[]line;
+
     return 0;
 }

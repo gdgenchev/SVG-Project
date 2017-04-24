@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/georg/Desktop/C++ Projects/SVG project FMI
+# Install script for directory: C:/Users/georg/Desktop/C++ Projects/SVG-Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

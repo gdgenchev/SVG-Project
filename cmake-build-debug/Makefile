@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\georg\Desktop\C++ Projects\SVG project FMI"
+CMAKE_SOURCE_DIR = "C:\Users\georg\Desktop\C++ Projects\SVG-Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\georg\Desktop\C++ Projects\SVG-Project\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG-Project\cmake-build-debug\CMakeFiles" "C:\Users\georg\Desktop\C++ Projects\SVG-Project\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG project FMI\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\georg\Desktop\C++ Projects\SVG-Project\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -175,6 +175,33 @@ Figure.s: Figure.cpp.s
 Figure.cpp.s:
 	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/Figure.cpp.s
 .PHONY : Figure.cpp.s
+
+FigureCollection.obj: FigureCollection.cpp.obj
+
+.PHONY : FigureCollection.obj
+
+# target to build an object file
+FigureCollection.cpp.obj:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.obj
+.PHONY : FigureCollection.cpp.obj
+
+FigureCollection.i: FigureCollection.cpp.i
+
+.PHONY : FigureCollection.i
+
+# target to preprocess a source file
+FigureCollection.cpp.i:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.i
+.PHONY : FigureCollection.cpp.i
+
+FigureCollection.s: FigureCollection.cpp.s
+
+.PHONY : FigureCollection.s
+
+# target to generate assembly for a file
+FigureCollection.cpp.s:
+	$(MAKE) -f CMakeFiles\SVG_project_FMI.dir\build.make CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.s
+.PHONY : FigureCollection.cpp.s
 
 Line.obj: Line.cpp.obj
 
@@ -272,6 +299,9 @@ help:
 	@echo ... Figure.obj
 	@echo ... Figure.i
 	@echo ... Figure.s
+	@echo ... FigureCollection.obj
+	@echo ... FigureCollection.i
+	@echo ... FigureCollection.s
 	@echo ... Line.obj
 	@echo ... Line.i
 	@echo ... Line.s

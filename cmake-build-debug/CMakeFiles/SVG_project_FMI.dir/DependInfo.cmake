@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Circle.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Circle.cpp.obj"
-  "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Figure.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj"
-  "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Line.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj"
-  "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/Rectangle.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj"
-  "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/main.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG project FMI/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/main.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Circle.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/Line.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/Rectangle.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj"
+  "C:/Users/georg/Desktop/C++ Projects/SVG-Project/main.cpp" "C:/Users/georg/Desktop/C++ Projects/SVG-Project/cmake-build-debug/CMakeFiles/SVG_project_FMI.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

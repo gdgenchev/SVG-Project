@@ -8,6 +8,10 @@ CMakeFiles/SVG_project_FMI.dir/Circle.cpp.obj: ../Figure.h
 CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: ../Figure.cpp
 CMakeFiles/SVG_project_FMI.dir/Figure.cpp.obj: ../Figure.h
 
+CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.obj: ../Figure.h
+CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.obj: ../FigureCollection.cpp
+CMakeFiles/SVG_project_FMI.dir/FigureCollection.cpp.obj: ../FigureCollection.h
+
 CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj: ../Figure.h
 CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj: ../Line.cpp
 CMakeFiles/SVG_project_FMI.dir/Line.cpp.obj: ../Line.h
@@ -18,6 +22,7 @@ CMakeFiles/SVG_project_FMI.dir/Rectangle.cpp.obj: ../Rectangle.h
 
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Circle.h
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Figure.h
+CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../FigureCollection.h
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Line.h
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../Rectangle.h
 CMakeFiles/SVG_project_FMI.dir/main.cpp.obj: ../main.cpp
