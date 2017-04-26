@@ -11,9 +11,9 @@ int count_circ;
 int count_line;
 FigureCollection figc;
 void getInfo(std::fstream& filestr) {
+    Line* line = new Line;
     Rectangle* rect= new Rectangle;
     Circle* circ = new Circle;
-    Line* line = new Line;
     count_rect = 0;
     count_circ = 0;
     count_line = 0;
@@ -34,6 +34,11 @@ void getInfo(std::fstream& filestr) {
     filestr.clear();
     filestr.seekg(0,filestr.beg);
     while (std::getline(filestr, line1)) {
+
+        rect = new Rectangle;
+        line  = new Line;
+        circ = new Circle;
+
         if (line1.find("<rect") != std::string::npos) {
             attributes += line1;
             flag_rect = 1;
@@ -70,7 +75,6 @@ void getInfo(std::fstream& filestr) {
             flag_circ = 0;
         }
 
-
         if(line1.find("<g stroke") != std::string::npos)
             attributes += line1;
         if (line1.find("<line") != std::string::npos) {
@@ -90,7 +94,6 @@ void getInfo(std::fstream& filestr) {
             flag_line = 0;
         }
     }
-
 }
 
 int main() {

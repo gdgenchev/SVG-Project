@@ -8,7 +8,7 @@
 class FigureCollection
 {
 private:
-	Figure ** collection;
+	Figure **collection;
 	unsigned int numberOfEntries;
 	unsigned int maxEntries;
 public:
@@ -16,7 +16,7 @@ public:
 	~FigureCollection();
 
 	void addEntry(Figure*);
-	void printToConsole() const;
+	 void printToConsole() const;
 };
 
 

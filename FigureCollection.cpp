@@ -4,18 +4,14 @@
 
 #include "FigureCollection.h"
 #include <iostream>
-FigureCollection::FigureCollection()
-{
-    for (unsigned int i = 0; i < numberOfEntries; ++i)
-        collection[i] = NULL;
-    collection = NULL;
+FigureCollection::FigureCollection() {
     numberOfEntries = 0;
-    maxEntries = 0;
+    maxEntries = 4;
+    collection = new Figure*[maxEntries];
 }
 
 
-FigureCollection::~FigureCollection()
-{
+FigureCollection::~FigureCollection() {
     for (unsigned int i = 0; i < numberOfEntries; ++i)
         delete collection[i];
     delete[] collection;
@@ -23,29 +19,28 @@ FigureCollection::~FigureCollection()
 
 void FigureCollection::addEntry(Figure *figure)
 {
+    figure->print();
     if (numberOfEntries == maxEntries)
     {
-        Figure** temp = new Figure*[maxEntries + 1];
-        for (unsigned int i = 0; i < maxEntries; ++i)
+        Figure** temp = new Figure*[maxEntries * 2];
+        for (unsigned int i = 0; i < numberOfEntries; ++i)
         {
             temp[i] = collection[i];
         }
         temp[numberOfEntries] = figure;
-        for (unsigned int i = 0; i < maxEntries; ++i)
-            delete collection[i];
         delete[] collection;
         collection = temp;
         numberOfEntries++;
+        maxEntries *= 2;
         return;
     }
-    collection[numberOfEntries] = figure;
-    numberOfEntries++;
+    collection[numberOfEntries++] = figure;
+    //Rosti slab si.
 }
-void FigureCollection::printToConsole() const
-{
+void FigureCollection::printToConsole() const{
     for (unsigned int i = 0; i < numberOfEntries; ++i)
     {
         std::cout << i + 1;
-      collection[i]->print();
+        collection[i]->print();
     }
 }
