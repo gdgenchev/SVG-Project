@@ -5,11 +5,13 @@
 #include "FigureCollection.h"
 #include <iostream>
 FigureCollection::FigureCollection() {
+    defaultConstructor();
+}
+void FigureCollection::defaultConstructor() {
     numberOfEntries = 0;
     maxEntries = 4;
-    collection = new Figure*[maxEntries];
+    collection = new Figure *[maxEntries];
 }
-
 
 FigureCollection::~FigureCollection() {
     for (unsigned int i = 0; i < numberOfEntries; ++i)
@@ -19,7 +21,6 @@ FigureCollection::~FigureCollection() {
 
 void FigureCollection::addEntry(Figure *figure)
 {
-    figure->print();
     if (numberOfEntries == maxEntries)
     {
         Figure** temp = new Figure*[maxEntries * 2];
@@ -35,12 +36,14 @@ void FigureCollection::addEntry(Figure *figure)
         return;
     }
     collection[numberOfEntries++] = figure;
-    //Rosti slab si.
 }
 void FigureCollection::printToConsole() const{
-    for (unsigned int i = 0; i < numberOfEntries; ++i)
-    {
+    for (unsigned int i = 0; i < numberOfEntries; ++i) {
         std::cout << i + 1;
         collection[i]->print();
     }
+}
+
+int FigureCollection::getID() const{
+    return numberOfEntries;
 }

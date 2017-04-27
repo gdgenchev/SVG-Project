@@ -13,7 +13,9 @@ protected:
     int strokeWidth;
     virtual void setInfo(std::string line);
 public:
+    Figure();
     virtual void print() const;
+    virtual void create(std::string line);
 };
 
 

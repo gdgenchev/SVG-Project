@@ -6,35 +6,21 @@
 #include "Circle.h"
 #include "Line.h"
 #include "FigureCollection.h"
-int count_rect;
-int count_circ;
-int count_line;
 FigureCollection figc;
 void getInfo(std::fstream& filestr) {
-    Line* line = new Line;
-    Rectangle* rect= new Rectangle;
-    Circle* circ = new Circle;
-    count_rect = 0;
-    count_circ = 0;
-    count_line = 0;
+    figc.defaultConstructor();
+    Line* line;
+    Rectangle* rect;
+    Circle* circ;
     std::string word;
     std::string attributes;
     std::string line1;
     bool flag_rect = 0;
     bool flag_circ = 0;
     bool flag_line = 0;
-    int i = 0;
-    int p = 0;
-    int t = 0;
-    while (std::getline(filestr, line1)) {
-        if (line1.find("<rect") != std::string::npos) count_rect++;
-        if (line1.find("<circle") != std::string::npos) count_circ++;
-        if (line1.find("<line") != std::string::npos) count_line++;
-    }
     filestr.clear();
     filestr.seekg(0,filestr.beg);
     while (std::getline(filestr, line1)) {
-
         rect = new Rectangle;
         line  = new Line;
         circ = new Circle;
@@ -95,8 +81,33 @@ void getInfo(std::fstream& filestr) {
         }
     }
 }
+void create(Rectangle* rect, Circle* circ, Line* line,std::string s){
 
+    if(s.find("rectangle") != std::string::npos){
+        rect = new Rectangle;
+        rect->create(s);
+        figc.addEntry(rect);
+        std::cout << "Successfully created rectangle (" <<figc.getID() << ")\n";
+    }
+
+    if(s.find("circle") != std::string::npos){
+        circ = new Circle;
+        circ->create(s);
+        figc.addEntry(circ);
+        std::cout << "Successfully created circle (" <<figc.getID() << ")\n";
+    }
+
+    if(s.find("line") != std::string::npos){
+        line = new Line;
+        line->create(s);
+        figc.addEntry(line);
+        std::cout << "Successfully created line (" <<figc.getID() << ")\n";
+    }
+}
 int main() {
+    Rectangle *rect = nullptr;
+    Line* line = nullptr;
+    Circle* circ = nullptr;
     bool opened = 0;
     std::cout << "List of available commands:\n";
     std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n5)exit\n";
@@ -139,10 +150,8 @@ int main() {
         }
         if(!strcmp(c,"print")){
             if(opened) {
-                int count = 1;
                 std::cout << "Printing...\n";
                 figc.printToConsole();
-
             } else
                 std::cout << "Open a file first!\n";
         }
@@ -155,8 +164,8 @@ int main() {
         }
         if (!strcmp(c, "saveas")){
             if(opened) {
-                char filePath[100];
-                char filePath_fixed[100];
+               // char filePath[100];
+              //  char filePath_fixed[100];
                 std::cin >> filePath;
                 int len = strlen(filePath);
                 for (int i = 1; i < len - 1; i++)
@@ -172,6 +181,14 @@ int main() {
                 filestr.close();
                 opened = 0;
                 std::cout << "Successfully closed " << filePath_fixed << std::endl;
+            }else
+                std::cout << "You should open a file first!\n";
+        }
+        if(!strcmp(c,"create")){
+            if(opened) {
+                std::string s;
+                std::getline(std::cin, s);
+                create(rect, circ, line, s);
             }else
                 std::cout << "You should open a file first!\n";
         }

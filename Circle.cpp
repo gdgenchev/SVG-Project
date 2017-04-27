@@ -40,3 +40,25 @@ void Circle::print() const {
     std::cout << ". circle " << cx << ' ' << cy << ' ' << r <<' ';
     Figure::print();
 }
+
+void Circle::create(std::string line) {
+    std::string word1;
+    double number1;
+    double number2;
+    double number3;
+    int number4;
+    std::string word2;
+    std::string word3;
+    std::string line_copy = line;
+    std::istringstream inputStream(line);
+    while (inputStream >> word1 >> number1 >> number2 >> number3 >> word2 >> word3 >> number4) {
+        cx = number1;
+        cy = number2;
+        r = number3;
+        fill = word2;
+        stroke = word3;
+        strokeWidth = number4;
+
+
+    }
+}

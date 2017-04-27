@@ -9,8 +9,10 @@
 class Rectangle : public Figure {
     double x,y,width,height;
 public:
+    Rectangle();
     void setInfo(std::string line);
     void print() const;
+    void create(std::string line);
 };
 
 

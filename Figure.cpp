@@ -6,8 +6,13 @@
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
+Figure::Figure() {
+    fill = "unknown";
+    stroke = "black";
+    strokeWidth = 1;
+}
+
 void Figure::setInfo(std::string line) {
-   // std::cout << line;
     std::string word;
     std::istringstream inputStream(line);
     while (inputStream >> word) {
@@ -37,3 +42,19 @@ void Figure::print() const {
     std::cout << fill << ' ' << stroke << ' ' << strokeWidth << std::endl;
 }
 
+void Figure::create(std::string line) {
+        std::string word1;
+        double number1;
+        double number2;
+        double number3;
+        double number4;
+        std::string word2;
+        std::string word3;
+        int number5;
+        std::istringstream inputStream(line);
+        while (inputStream >> word1 >> number1 >> number2 >> number3 >> number4 >> word2 >> word3 >> number5) {
+            fill = word2;
+            stroke = word3;
+            strokeWidth = number5;
+        }
+}

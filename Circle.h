@@ -11,6 +11,7 @@ class Circle : public Figure {
 public:
     void setInfo(std::string line);
     void print() const;
+    void create(std::string line);
 };
 
 

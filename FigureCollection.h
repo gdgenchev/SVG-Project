@@ -14,9 +14,10 @@ private:
 public:
 	FigureCollection();
 	~FigureCollection();
-
+    void defaultConstructor();
 	void addEntry(Figure*);
-	 void printToConsole() const;
+    void printToConsole() const;
+    int getID() const;
 };
 
 

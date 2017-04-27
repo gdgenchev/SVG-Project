@@ -13,14 +13,28 @@
         fill="none" stroke="retard" stroke-width="2" />
 		 <rect x="10" y="15" width="1198" height="398"
         fill="none" stroke="purple" stroke-width="2" />
-		 <rect x="7" y="23" width="1198" height="398"
+		 <rect x="7" y="23" width="1198" height="398"z
         fill="none" stroke="green" stroke-width="2" />
 		 <circle cx="600" cy="200" r="100"
         fill="red" stroke="blue" stroke-width="10"  />
+		 <g stroke="green" >
+    <line x1="100" y1="300" x2="300" y2="100"
+            stroke-width="5"  />
+    <line x1="300" y1="300" x2="500" y2="100"
+            stroke-width="10"  />
+    <line x1="500" y1="300" x2="700" y2="100"
+            stroke-width="15"  />
+    <line x1="700" y1="300" x2="900" y2="100"
+            stroke-width="20"  />
+    <line x1="900" y1="300" x2="1100" y2="100"
+            stroke-width="25"  />
+  </g>
 		 <circle cx="500" cy="200" r="100"
         fill="red" stroke="blue" stroke-width="10"  />
 		<circle cx="500" cy="200" r="100"
         fill="red" stroke="red" stroke-width="10"  />
+		  <rect x="100" y="60" width="10" height="10" fill="red" />
 		
 		
 </svg>
+SVG Master
