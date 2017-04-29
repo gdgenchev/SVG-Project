@@ -4,6 +4,7 @@
 
 #include "FigureCollection.h"
 #include <iostream>
+#include <sstream>
 FigureCollection::FigureCollection() {
     defaultConstructor();
 }
@@ -46,4 +47,15 @@ void FigureCollection::printToConsole() const{
 
 int FigureCollection::getID() const{
     return numberOfEntries;
+}
+
+void FigureCollection::erase(unsigned int id) {
+    numberOfEntries--;
+    for(int i = id; i <= numberOfEntries; i++)
+        collection[i-1] = collection[i];
+}
+
+void FigureCollection::translate(std::string line) {
+        for(int i = 0; i < numberOfEntries; i++)
+            collection[i]->translate(line);
 }

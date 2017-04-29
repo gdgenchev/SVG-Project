@@ -58,3 +58,4 @@ void Figure::create(std::string line) {
             strokeWidth = number5;
         }
 }
+void Figure::translate(std::string line) {}

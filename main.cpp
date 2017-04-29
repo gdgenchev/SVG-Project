@@ -105,12 +105,13 @@ void create(Rectangle* rect, Circle* circ, Line* line,std::string s){
     }
 }
 int main() {
+       std::cout << "List of available commands:\n";
+   std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n"
+           "5)exit\n6)create\n7)erase\n8)translate\n9)within\n10)print\n";
     Rectangle *rect = nullptr;
     Line* line = nullptr;
     Circle* circ = nullptr;
     bool opened = 0;
-    std::cout << "List of available commands:\n";
-    std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n5)exit\n";
     while(true) {
         char filePath[100];
         char filePath_fixed[100];
@@ -136,7 +137,7 @@ int main() {
                 getInfo(filestr);
                 std::cout << "Successfully opened " << filePath_fixed << '\n';
                 std::cout << "Supported figures: rectangle,circle,line\n";
-                std::cout << "Available commands:\n1),2),3),4),5)\n6)print\n7)create\n8)erase\n9)translate\n10)within\n";
+
             } else {
                 if (!strstr(filePath, ".svg")) {
                     std::cerr << "Error opening file: file format not supported!\n";
@@ -192,7 +193,19 @@ int main() {
             }else
                 std::cout << "You should open a file first!\n";
         }
-
+        if(!strcmp(c,"erase")){
+            if(opened) {
+                unsigned int id;
+                std::cin >> id;
+                figc.erase(id);
+            }else
+                std::cout << "You should open a file first!\n";
+        }
+        if(!strcmp(c,"translate")){
+            std::string s;
+            getline(std::cin,s);
+            figc.translate(s);
+        }
     }
 
     return 0;

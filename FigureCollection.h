@@ -18,6 +18,8 @@ public:
 	void addEntry(Figure*);
     void printToConsole() const;
     int getID() const;
+	void erase(unsigned int id);
+    void translate(std::string line);
 };
 
 

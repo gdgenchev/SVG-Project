@@ -62,3 +62,7 @@ void Circle::create(std::string line) {
 
     }
 }
+
+void Circle::translate(std::string line) {
+    std::cout << line;
+}

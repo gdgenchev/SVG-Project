@@ -16,6 +16,7 @@ public:
     Figure();
     virtual void print() const;
     virtual void create(std::string line);
+    virtual void translate(std::string line);
 };
 
 
