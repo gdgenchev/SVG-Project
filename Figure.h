@@ -5,6 +5,7 @@
 #ifndef SVG_PROJECT_FMI_FIGURE_H
 #define SVG_PROJECT_FMI_FIGURE_H
 #include <string>
+#include <fstream>
 
 class Figure {
 protected:
@@ -17,6 +18,7 @@ public:
     virtual void print() const;
     virtual void create(std::string line);
     virtual void translate(std::string line);
+    virtual void printToFile(std::ofstream& os);
 };
 
 

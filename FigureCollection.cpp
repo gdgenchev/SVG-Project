@@ -9,53 +9,58 @@ FigureCollection::FigureCollection() {
     defaultConstructor();
 }
 void FigureCollection::defaultConstructor() {
-    numberOfEntries = 0;
+    currentEntries = 0;
     maxEntries = 4;
     collection = new Figure *[maxEntries];
 }
 
 FigureCollection::~FigureCollection() {
-    for (unsigned int i = 0; i < numberOfEntries; ++i)
+    for (unsigned int i = 0; i < currentEntries; ++i)
         delete collection[i];
     delete[] collection;
 }
 
-void FigureCollection::addEntry(Figure *figure)
-{
-    if (numberOfEntries == maxEntries)
-    {
+void FigureCollection::addEntry(Figure *figure) {
+    if (currentEntries == maxEntries) {
         Figure** temp = new Figure*[maxEntries * 2];
-        for (unsigned int i = 0; i < numberOfEntries; ++i)
-        {
+        for (unsigned int i = 0; i < currentEntries; ++i) {
             temp[i] = collection[i];
         }
-        temp[numberOfEntries] = figure;
+        temp[currentEntries] = figure;
         delete[] collection;
         collection = temp;
-        numberOfEntries++;
+        currentEntries++;
         maxEntries *= 2;
         return;
     }
-    collection[numberOfEntries++] = figure;
+    collection[currentEntries++] = figure;
 }
 void FigureCollection::printToConsole() const{
-    for (unsigned int i = 0; i < numberOfEntries; ++i) {
+    for (unsigned int i = 0; i < currentEntries; ++i) {
         std::cout << i + 1;
         collection[i]->print();
     }
 }
 
 int FigureCollection::getID() const{
-    return numberOfEntries;
+    return currentEntries;
 }
 
 void FigureCollection::erase(unsigned int id) {
-    numberOfEntries--;
-    for(int i = id; i <= numberOfEntries; i++)
+    currentEntries--;
+    for(int i = id; i <= currentEntries; i++)
         collection[i-1] = collection[i];
 }
 
 void FigureCollection::translate(std::string line) {
-        for(int i = 0; i < numberOfEntries; i++)
+    if(line[1] < '0' || line[1] > '9') {
+        for (int i = 0; i < currentEntries; i++)
             collection[i]->translate(line);
+    }
+}
+
+void FigureCollection::printToFile(std::ofstream& newFile) const {
+    for (unsigned int i = 0; i < currentEntries; ++i) {
+        collection[i]->printToFile(newFile);
+    }
 }

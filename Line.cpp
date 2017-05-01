@@ -76,3 +76,22 @@ void Line::create(std::string line) {
         strokeWidth = number5;
     }
 }
+
+void Line::translate(std::string line) {
+    std::string number[100];
+    int t = 0;
+    for (int i = 0; i < line.size(); i++) {
+        if (line[i] >= '0' && line[i] <= '9') {
+            int p = i;
+            while (line[p] >= '0' && line[p] <= '9') {
+                number[t] += line[p++];
+            }
+            i = p;
+            t++;
+        }
+    }
+    x1 += atof(number[0].c_str());
+    y1 += atof(number[1].c_str());
+    x2 += atof(number[0].c_str());
+    y2 += atof(number[1].c_str());
+}

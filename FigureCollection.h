@@ -9,7 +9,7 @@ class FigureCollection
 {
 private:
 	Figure **collection;
-	unsigned int numberOfEntries;
+	unsigned int currentEntries;
 	unsigned int maxEntries;
 public:
 	FigureCollection();
@@ -20,6 +20,7 @@ public:
     int getID() const;
 	void erase(unsigned int id);
     void translate(std::string line);
+    void printToFile(std::ofstream& newFile) const;
 };
 
 

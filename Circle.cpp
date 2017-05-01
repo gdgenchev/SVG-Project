@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <sstream>
 #include <iostream>
+#include <cmath>
 void Circle::setInfo(std::string line) {
     std::string word;
     std::string line_copy = line;
@@ -64,5 +65,18 @@ void Circle::create(std::string line) {
 }
 
 void Circle::translate(std::string line) {
-    std::cout << line;
+    std::string number[100];
+    int t = 0;
+    for (int i = 0; i < line.size(); i++) {
+        if (line[i] >= '0' && line[i] <= '9') {
+            int p = i;
+            while (line[p] >= '0' && line[p] <= '9') {
+                number[t] += line[p++];
+            }
+            i = p;
+            t++;
+        }
+    }
+     cx += atof(number[0].c_str());
+     cy += atof(number[1].c_str());
 }

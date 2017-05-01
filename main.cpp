@@ -82,7 +82,6 @@ void getInfo(std::fstream& filestr) {
     }
 }
 void create(Rectangle* rect, Circle* circ, Line* line,std::string s){
-
     if(s.find("rectangle") != std::string::npos){
         rect = new Rectangle;
         rect->create(s);
@@ -165,15 +164,32 @@ int main() {
         }
         if (!strcmp(c, "saveas")){
             if(opened) {
-               // char filePath[100];
-              //  char filePath_fixed[100];
+                char filePath[100];
+                char filePath_fixed[100];
+                char fileName[100];
                 std::cin >> filePath;
                 int len = strlen(filePath);
                 for (int i = 1; i < len - 1; i++)
                     filePath_fixed[i - 1] = filePath[i];
                 filePath_fixed[len - 2] = '\0';
-                std::cout << filePath_fixed;
-                std::ofstream createFile(filePath_fixed);
+
+                        int len1 = strlen(filePath_fixed);
+                        for(int i = len1; i > 0; i--){
+                            if (filePath_fixed[i] == '\\') {
+                                int t = i + 1;
+                                for (int j = 0; j < len - i; j++) {
+                                    if (filePath_fixed[t] != '\"')
+                                        fileName[j] = filePath_fixed[t++];
+                                    else
+                                        fileName[j] = '\0';
+                                }
+                                break;
+                            }
+
+                        }
+                        std::cout << "Successfully saved " << fileName << std::endl;
+                std::ofstream newFile(filePath_fixed);
+                figc.printToFile(newFile);
             }else
                 std::cout << "Open a file first!\n";
         }
@@ -207,6 +223,5 @@ int main() {
             figc.translate(s);
         }
     }
-
     return 0;
 }

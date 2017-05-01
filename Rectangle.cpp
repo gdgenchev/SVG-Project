@@ -76,3 +76,25 @@ void Rectangle::create(std::string line) {
     }
 }
 
+void Rectangle::translate(std::string line) {
+    std::string number[100];
+    int t = 0;
+    for (int i = 0; i < line.size(); i++) {
+        if (line[i] >= '0' && line[i] <= '9') {
+            int p = i;
+            while (line[p] >= '0' && line[p] <= '9') {
+                number[t] += line[p++];
+            }
+            i = p;
+            t++;
+        }
+    }
+    x += atof(number[0].c_str());
+    y += atof(number[1].c_str());
+}
+
+void Rectangle::printToFile(std::ofstream& os)  {
+    os << "  <rect x=\"" << x << "\" y=\"" << y << "\" width=\"" << width << "\" height=\"" << height << "\"\n";
+    Figure::printToFile(os);
+}
+

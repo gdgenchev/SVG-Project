@@ -14,6 +14,7 @@ public:
     void setInfo(std::string line);
     void print() const;
     void create(std::string line);
+    void translate(std::string line);
 };
 
 

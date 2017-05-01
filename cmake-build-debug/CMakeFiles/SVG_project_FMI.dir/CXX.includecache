@@ -15,6 +15,8 @@ sstream
 -
 iostream
 -
+cmath
+-
 
 C:/Users/georg/Desktop/C++ Projects/SVG-Project/Circle.h
 Figure.h
@@ -32,6 +34,8 @@ cstdlib
 
 C:/Users/georg/Desktop/C++ Projects/SVG-Project/Figure.h
 string
+-
+fstream
 -
 
 C:/Users/georg/Desktop/C++ Projects/SVG-Project/FigureCollection.cpp

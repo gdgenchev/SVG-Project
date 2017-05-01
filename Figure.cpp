@@ -59,3 +59,7 @@ void Figure::create(std::string line) {
         }
 }
 void Figure::translate(std::string line) {}
+
+void Figure::printToFile(std::ofstream& os) {
+ os << "\t\tfill=\"" << fill << "\" stroke=\"" << stroke << "\" stroke-width=\"" << strokeWidth << "\" />" << std::endl;
+}
