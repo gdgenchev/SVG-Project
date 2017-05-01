@@ -53,9 +53,27 @@ void FigureCollection::erase(unsigned int id) {
 }
 
 void FigureCollection::translate(std::string line) {
+    int id;
     if(line[1] < '0' || line[1] > '9') {
+        std::cout << "Translated all figures\n";
         for (int i = 0; i < currentEntries; i++)
             collection[i]->translate(line);
+    }else{
+       unsigned int numberOfDigits = 0;
+        std::istringstream is(line);
+        is >> id;
+        int id_copy = id;
+        while(id != 0){
+            id /=10;
+            numberOfDigits++;
+        }
+        if(id_copy > currentEntries) {
+            std::cout << "No such figure.\n";
+            return;
+        }
+        line.erase(line.begin(),line.begin() + numberOfDigits + 2);
+        std::cout << "Translated (" << id_copy << ")\n";
+        collection[id_copy - 1]->translate(line);
     }
 }
 

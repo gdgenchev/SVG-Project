@@ -18,8 +18,6 @@ void getInfo(std::fstream& filestr) {
     bool flag_rect = 0;
     bool flag_circ = 0;
     bool flag_line = 0;
-    filestr.clear();
-    filestr.seekg(0,filestr.beg);
     while (std::getline(filestr, line1)) {
         rect = new Rectangle;
         line  = new Line;
@@ -164,22 +162,22 @@ int main() {
         }
         if (!strcmp(c, "saveas")){
             if(opened) {
-                char filePath[100];
-                char filePath_fixed[100];
+                char filePath1[100];
+                char filePath1_fixed[100];
                 char fileName[100];
-                std::cin >> filePath;
-                int len = strlen(filePath);
+                std::cin >> filePath1;
+                int len = strlen(filePath1);
                 for (int i = 1; i < len - 1; i++)
-                    filePath_fixed[i - 1] = filePath[i];
-                filePath_fixed[len - 2] = '\0';
+                    filePath1_fixed[i - 1] = filePath1[i];
+                filePath1_fixed[len - 2] = '\0';
 
-                        int len1 = strlen(filePath_fixed);
+                        int len1 = strlen(filePath1_fixed);
                         for(int i = len1; i > 0; i--){
-                            if (filePath_fixed[i] == '\\') {
+                            if (filePath1_fixed[i] == '\\') {
                                 int t = i + 1;
                                 for (int j = 0; j < len - i; j++) {
-                                    if (filePath_fixed[t] != '\"')
-                                        fileName[j] = filePath_fixed[t++];
+                                    if (filePath1_fixed[t] != '\"')
+                                        fileName[j] = filePath1_fixed[t++];
                                     else
                                         fileName[j] = '\0';
                                 }
@@ -188,8 +186,18 @@ int main() {
 
                         }
                         std::cout << "Successfully saved " << fileName << std::endl;
-                std::ofstream newFile(filePath_fixed);
+                std::ofstream newFile(filePath1_fixed, std::ios::app);
+                std::fstream openedFile(filePath);
+                std::string line1;
+                while (std::getline(openedFile, line1)){
+                    if (line1.find("<rect") != std::string::npos
+                        || line1.find("<circle") != std::string::npos
+                        || line1.find("<line") != std::string::npos)
+                        break;
+                    newFile << line1 << std::endl;
+                }
                 figc.printToFile(newFile);
+                newFile << "</svg>\n";
             }else
                 std::cout << "Open a file first!\n";
         }

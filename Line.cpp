@@ -50,9 +50,14 @@ void Line::setInfo(std::string line) {
                 number += word[i];
             strokeWidth = atoi(number.c_str());
         }
+        if(word.find("stroke=") != std::string::npos){
+            std::string color;
+            for (int i = 8; i < word.size() - 3; i++)
+                color += word[i];
+            stroke = color;
+        }
 
     }
-    Figure::setInfo(line);
 }
 
 void Line::print() const {
@@ -94,4 +99,10 @@ void Line::translate(std::string line) {
     y1 += atof(number[1].c_str());
     x2 += atof(number[0].c_str());
     y2 += atof(number[1].c_str());
+}
+
+void Line::printToFile(std::ofstream &os) {
+        os << "  <line x1=\"" << x1 << "\" y1=\"" << y1 << "\" x2=\"" << x2 << "\" y2=\"" << y2 << "\"\n";
+        os << "\t\tstroke-width=\"" << strokeWidth << "\" stroke=\"" << stroke << "\" />\n";
+        os << std::endl;
 }

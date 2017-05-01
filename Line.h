@@ -15,6 +15,7 @@ public:
     void print() const;
     void create(std::string line);
     void translate(std::string line);
+    void printToFile(std::ofstream& os);
 };
 
 

@@ -80,3 +80,7 @@ void Circle::translate(std::string line) {
      cx += atof(number[0].c_str());
      cy += atof(number[1].c_str());
 }
+void Circle::printToFile(std::ofstream &os) {
+    os << "  <circle cx=\"" << cx << "\" cy=\"" << cy << "\" r=\"" << r << "\"\n";
+    Figure::printToFile(os);
+}
