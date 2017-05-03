@@ -61,7 +61,7 @@ void Rectangle::create(std::string line) {
     double number2;
     double number3;
     double number4;
-    double number5;
+    int number5;
     std::string word2;
     std::string word3;
     std::string line_copy = line;
@@ -73,6 +73,7 @@ void Rectangle::create(std::string line) {
         height = number4;
         fill = word2;
         stroke = word3;
+        strokeWidth = number5;
     }
 }
 

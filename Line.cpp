@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
+#include <cstring>
 
 Line::Line() {
     x1 = y1 = x2 = y2 = 0;
@@ -52,7 +53,7 @@ void Line::setInfo(std::string line) {
         }
         if(word.find("stroke=") != std::string::npos){
             std::string color;
-            for (int i = 8; i < word.size() - 3; i++)
+            for (int i = 8; i < word.size() - 1; i++)
                 color += word[i];
             stroke = color;
         }
@@ -103,6 +104,6 @@ void Line::translate(std::string line) {
 
 void Line::printToFile(std::ofstream &os) {
         os << "  <line x1=\"" << x1 << "\" y1=\"" << y1 << "\" x2=\"" << x2 << "\" y2=\"" << y2 << "\"\n";
-        os << "\t\tstroke-width=\"" << strokeWidth << "\" stroke=\"" << stroke << "\" />\n";
+        os << "\t\tstroke=\"" << stroke << "\" stroke-width=\"" << strokeWidth << "\" />\n";
         os << std::endl;
 }

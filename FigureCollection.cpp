@@ -48,6 +48,7 @@ int FigureCollection::getID() const{
 
 void FigureCollection::erase(unsigned int id) {
     currentEntries--;
+    std::cout << "Erased (" << id <<")\n";
     for(int i = id; i <= currentEntries; i++)
         collection[i-1] = collection[i];
 }

@@ -115,6 +115,8 @@ int main() {
         std::fstream filestr;
         char c[10];
         std::cin >> c;
+
+        ///*Open
         if (!strcmp(c, "open")) {
             opened = 1;
             std::cin >> filePath;
@@ -146,6 +148,8 @@ int main() {
                 }
             }
         }
+
+        ///*Print
         if(!strcmp(c,"print")){
             if(opened) {
                 std::cout << "Printing...\n";
@@ -153,13 +157,39 @@ int main() {
             } else
                 std::cout << "Open a file first!\n";
         }
+
+        ///*Exit
         if (!strcmp(c, "exit")) {
             std::cout << "Exiting the program...\n";
             break;
         }
+
+        ///*Save
         if (!strcmp(c, "save")){
-            //TO DO
+            if(opened) {
+                std::cout << "Successfully saved " << filePath_fixed << std::endl;
+                std::ifstream openedFile(filePath);
+                std::string line1;
+                std::string info_beg[100];
+                int t = 0;
+                while (std::getline(openedFile, line1)){
+                    if (line1.find("<rect") != std::string::npos
+                        || line1.find("<circle") != std::string::npos
+                        || line1.find("<line") != std::string::npos)
+                        break;
+                    info_beg[t++] = line1;
+                }
+                openedFile.close();
+                std::ofstream newFile(filePath);
+                for(int i = 0; i < t; i++)
+                    newFile << info_beg[i] << std::endl;
+                figc.printToFile(newFile);
+                newFile << "</svg>\n";
+            }else
+                std::cout << "Open a file first!\n";
         }
+
+        ///*Save As
         if (!strcmp(c, "saveas")){
             if(opened) {
                 char filePath1[100];
@@ -170,7 +200,6 @@ int main() {
                 for (int i = 1; i < len - 1; i++)
                     filePath1_fixed[i - 1] = filePath1[i];
                 filePath1_fixed[len - 2] = '\0';
-
                         int len1 = strlen(filePath1_fixed);
                         for(int i = len1; i > 0; i--){
                             if (filePath1_fixed[i] == '\\') {
@@ -182,8 +211,8 @@ int main() {
                                         fileName[j] = '\0';
                                 }
                                 break;
-                            }
-
+                            }else
+                                strcpy(fileName,filePath1_fixed);
                         }
                         std::cout << "Successfully saved " << fileName << std::endl;
                 std::ofstream newFile(filePath1_fixed, std::ios::app);
@@ -201,6 +230,8 @@ int main() {
             }else
                 std::cout << "Open a file first!\n";
         }
+
+        ///*Close
         if (!strcmp(c, "close")){
             if(opened) {
                 filestr.close();
@@ -209,6 +240,8 @@ int main() {
             }else
                 std::cout << "You should open a file first!\n";
         }
+
+        ///*Create
         if(!strcmp(c,"create")){
             if(opened) {
                 std::string s;
@@ -217,6 +250,8 @@ int main() {
             }else
                 std::cout << "You should open a file first!\n";
         }
+
+        ///*Erase
         if(!strcmp(c,"erase")){
             if(opened) {
                 unsigned int id;
@@ -225,11 +260,14 @@ int main() {
             }else
                 std::cout << "You should open a file first!\n";
         }
+
+        ///*Translate
         if(!strcmp(c,"translate")){
             std::string s;
             getline(std::cin,s);
             figc.translate(s);
-        }
-    }
+             }
+         }
+
     return 0;
 }

@@ -9,7 +9,7 @@
 Figure::Figure() {
     fill = "unknown";
     stroke = "black";
-    strokeWidth = 1;
+    strokeWidth = 10;
 }
 
 void Figure::setInfo(std::string line) {
