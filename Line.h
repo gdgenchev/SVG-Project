@@ -10,12 +10,13 @@ class Line : public Figure {
     double x1,y1,x2,y2;
     int strokeWidth;
 public:
-    Line();
     void setInfo(std::string line);
     void print() const;
     void create(std::string line);
     void translate(std::string line);
     void printToFile(std::ofstream& os);
+    bool isInsideRect (double, double, double, double);
+    bool isInsideCirc (double, double, double);
 };
 
 

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cmath>
 void Circle::setInfo(std::string line) {
+    id = 2;
     std::string word;
     std::string line_copy = line;
     std::istringstream inputStream(line);
@@ -83,4 +84,18 @@ void Circle::translate(std::string line) {
 void Circle::printToFile(std::ofstream &os) {
     os << "  <circle cx=\"" << cx << "\" cy=\"" << cy << "\" r=\"" << r << "\"\n";
     Figure::printToFile(os);
+}
+
+bool Circle::isInsideRect(double x, double y, double width, double height) {
+   if((cx > x && cy > y) && (cx < x + width && cy < y + height)){
+       if((cx - r > x && cy - r > y) && (cx + r < x + width && cy + r < y + height))
+           return true;
+   }
+    return false;
+}
+
+bool Circle::isInsideCirc(double cx, double cy, double r) {
+    double distance;
+    distance = sqrt(fabs(this->cx - cx) * fabs(this->cx - cx) + fabs(this->cy - cy) * fabs(this->cy - cy));
+    return distance + this->r < r;
 }

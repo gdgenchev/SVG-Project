@@ -35,6 +35,7 @@ void FigureCollection::addEntry(Figure *figure) {
     }
     collection[currentEntries++] = figure;
 }
+
 void FigureCollection::printToConsole() const{
     for (unsigned int i = 0; i < currentEntries; ++i) {
         std::cout << i + 1;
@@ -47,6 +48,10 @@ int FigureCollection::getID() const{
 }
 
 void FigureCollection::erase(unsigned int id) {
+    if(id > currentEntries){
+        std::cout << "There is no figure number " << id << std::endl;
+        return;
+    }
     currentEntries--;
     std::cout << "Erased (" << id <<")\n";
     for(int i = id; i <= currentEntries; i++)
@@ -81,5 +86,39 @@ void FigureCollection::translate(std::string line) {
 void FigureCollection::printToFile(std::ofstream& newFile) const {
     for (unsigned int i = 0; i < currentEntries; ++i) {
         collection[i]->printToFile(newFile);
+    }
+}
+
+void FigureCollection::printWithin(std::string line) {
+    std::istringstream is(line);
+    std::string type;
+    double cx, cy, r;
+    double x, y, width, height;
+    is >> type;
+    if (type == "circle") {
+        bool flag = 0;
+        while (is >> cx >> cy >> r);
+        for (unsigned int i = 0; i < currentEntries; i++) {
+            if (collection[i]->isInsideCirc(cx, cy, r)) {
+                std::cout << i + 1;
+                collection[i]->print();
+                flag = 1;
+            }
+        }
+        if(!flag)
+            std::cout << "No figures are located within circle " << cx << ' ' << cy << ' ' << r << std::endl;
+    }
+    if (type == "rectangle") {
+        bool flag = 0;
+        while (is >> x >> y >> width >> height);
+        for (unsigned int i = 0; i < currentEntries; i++) {
+            if (collection[i]->isInsideRect(x, y, width, height)) {
+                std::cout << i + 1;
+                collection[i]->print();
+                flag = 1;
+            }
+        }
+        if(!flag)
+            std::cout << "No figures are located within rectangle " << x << ' ' << y << ' ' << width << ' ' << height << std::endl;
     }
 }

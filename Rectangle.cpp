@@ -10,9 +10,11 @@
 
 Rectangle::Rectangle() {
    x = y = width = height = 0;
+    id = 1;
 }
 
 void Rectangle::setInfo(std::string line) {
+    id = 1;
     std::string word;
     std::istringstream inputStream(line);
     while (inputStream >> word) {
@@ -98,5 +100,35 @@ void Rectangle::printToFile(std::ofstream &os) {
         os << "  <rect x=\"" << x << "\" y=\"" << y << "\" width=\"" << width << "\" height=\"" << height << "\"\n";
         Figure::printToFile(os);
 }
+bool Rectangle::isInsideRect(double x, double y, double width, double height){
+    if ((this->x > x && this->y > y) && (this->x < x + width && this->y < y + height)){
+        if(this->x  + this->width < x + width && this->y + this->height < y + height)
+            return true;
+    }
+    return false;
+}
+struct point{
+    double x;
+    double y;
+};
+bool Rectangle::isInsideCirc(double cx, double cy, double r) {
+    point p1;
+    point p2;
+    point p3;
+    point p4;
+    p1.x = this->x;
+    p1.y = this->y;
+    p2.x = this->x + width;
+    p2.y = this->y;
+    p3.x = this->x;
+    p3.y = this->y + height;
+    p4.x = this->x + width;
+    p4.y = this->y + height;
+    return (((p1.x - cx) * (p1.x - cx) + (p1.y - cy) * (p1.y - cy)) < r * r)
+             && (((p2.x - cx)* (p2.x - cx) + (p2.y - cy) * (p2.y - cy)) < r * r)
+            && (((p3.x - cx)* (p3.x - cx) + (p3.y - cy) * (p3.y - cy)) < r * r)
+           && (((p4.x - cx)* (p4.x - cx) + (p4.y - cy) * (p4.y - cy)) < r * r);
+}
+
 
 

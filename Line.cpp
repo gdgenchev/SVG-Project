@@ -7,13 +7,8 @@
 #include <iostream>
 #include <sstream>
 #include <cstring>
-
-Line::Line() {
-    x1 = y1 = x2 = y2 = 0;
-
-}
-
 void Line::setInfo(std::string line) {
+    id = 3;
     std::string word;
     std::istringstream inputStream(line);
     while (inputStream >> word) {
@@ -106,4 +101,17 @@ void Line::printToFile(std::ofstream &os) {
         os << "  <line x1=\"" << x1 << "\" y1=\"" << y1 << "\" x2=\"" << x2 << "\" y2=\"" << y2 << "\"\n";
         os << "\t\tstroke=\"" << stroke << "\" stroke-width=\"" << strokeWidth << "\" />\n";
         os << std::endl;
+}
+
+bool Line::isInsideRect(double x, double y, double width, double height) {
+    if((x1 > x && y1 > y) && (x2 > x && y2 > y)) {
+        if ((x1 < x + width && y1 < y + height) && (x2 < x + width && y2 < y + height))
+            return true;
+    }
+    return false;
+}
+
+bool Line::isInsideCirc(double cx, double cy, double r) {
+    return ((x1 - cx) * (x1 - cx)) + ((y1 - cy) * (y1 - cy)) < r * r
+           && ((x2 - cx) * (x2 - cx)) + ((y2 - cy) * (y2 - cy)) < r * r;
 }

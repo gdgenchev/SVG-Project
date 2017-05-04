@@ -14,6 +14,8 @@ public:
     void create(std::string line);
     void translate(std::string line);
     void printToFile(std::ofstream& os);
+    virtual bool isInsideRect (double, double, double, double);
+    virtual bool isInsideCirc (double, double, double);
 };
 
 

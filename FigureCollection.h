@@ -21,6 +21,7 @@ public:
 	void erase(unsigned int id);
     void translate(std::string line);
     void printToFile(std::ofstream& newFile) const;
+    void printWithin (std::string line);
 };
 
 

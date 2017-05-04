@@ -102,9 +102,10 @@ void create(Rectangle* rect, Circle* circ, Line* line,std::string s){
     }
 }
 int main() {
-       std::cout << "List of available commands:\n";
-   std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n"
-           "5)exit\n6)create\n7)erase\n8)translate\n9)within\n10)print\n";
+    ///* Menu
+    std::cout << "List of available commands:\n";
+    std::cout << "1)open *file path*\n2)close\n3)save\n4)saveas \"file path\"\n"
+                "5)exit\n6)create\n7)erase\n8)translate\n9)within\n10)print\n";
     Rectangle *rect = nullptr;
     Line* line = nullptr;
     Circle* circ = nullptr;
@@ -136,7 +137,6 @@ int main() {
                 getInfo(filestr);
                 std::cout << "Successfully opened " << filePath_fixed << '\n';
                 std::cout << "Supported figures: rectangle,circle,line\n";
-
             } else {
                 if (!strstr(filePath, ".svg")) {
                     std::cerr << "Error opening file: file format not supported!\n";
@@ -200,21 +200,21 @@ int main() {
                 for (int i = 1; i < len - 1; i++)
                     filePath1_fixed[i - 1] = filePath1[i];
                 filePath1_fixed[len - 2] = '\0';
-                        int len1 = strlen(filePath1_fixed);
-                        for(int i = len1; i > 0; i--){
-                            if (filePath1_fixed[i] == '\\') {
-                                int t = i + 1;
-                                for (int j = 0; j < len - i; j++) {
-                                    if (filePath1_fixed[t] != '\"')
-                                        fileName[j] = filePath1_fixed[t++];
-                                    else
-                                        fileName[j] = '\0';
-                                }
-                                break;
-                            }else
-                                strcpy(fileName,filePath1_fixed);
+                int len1 = strlen(filePath1_fixed);
+                for(int i = len1; i > 0; i--){
+                    if (filePath1_fixed[i] == '\\') {
+                        int t = i + 1;
+                        for (int j = 0; j < len - i; j++) {
+                            if (filePath1_fixed[t] != '\"')
+                                fileName[j] = filePath1_fixed[t++];
+                            else
+                                fileName[j] = '\0';
                         }
-                        std::cout << "Successfully saved " << fileName << std::endl;
+                        break;
+                    }else
+                        strcpy(fileName,filePath1_fixed);
+                }
+                std::cout << "Successfully saved " << fileName << std::endl;
                 std::ofstream newFile(filePath1_fixed, std::ios::app);
                 std::fstream openedFile(filePath);
                 std::string line1;
@@ -267,7 +267,12 @@ int main() {
             getline(std::cin,s);
             figc.translate(s);
              }
-         }
+        if(!strcmp(c,"within")){
+            std::string s;
+            getline(std::cin,s);
+            figc.printWithin(s);
+        }
+    }
 
     return 0;
 }
