@@ -8,8 +8,8 @@
 
 class Line : public Figure {
     double x1,y1,x2,y2;
-    int strokeWidth;
 public:
+    Line();
     void setInfo(std::string line);
     void print() const;
     void create(std::string line);

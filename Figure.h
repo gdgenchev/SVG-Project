@@ -6,7 +6,8 @@
 #define SVG_PROJECT_FMI_FIGURE_H
 #include <string>
 #include <fstream>
-
+#include <string>
+using std::string;
 class Figure {
 protected:
     std::string fill;
@@ -16,7 +17,6 @@ protected:
 public:
     Figure();
     virtual void print() const;
-    virtual void create(std::string line);
     virtual void translate(std::string line);
     virtual void printToFile(std::ofstream& os);
     virtual bool isInsideRect (double, double, double, double){};

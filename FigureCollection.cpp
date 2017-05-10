@@ -54,8 +54,10 @@ void FigureCollection::erase(unsigned int id) {
     }
     currentEntries--;
     std::cout << "Erased (" << id <<")\n";
+    delete collection[id-1];
     for(int i = id; i <= currentEntries; i++)
         collection[i-1] = collection[i];
+
 }
 
 void FigureCollection::translate(std::string line) {

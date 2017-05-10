@@ -9,12 +9,12 @@
 #include <cstdlib>
 
 Rectangle::Rectangle() {
-   x = y = width = height = 0;
-    id = 1;
+    x = y = 0;
+    width = 100;
+    height = 100;
 }
 
 void Rectangle::setInfo(std::string line) {
-    id = 1;
     std::string word;
     std::istringstream inputStream(line);
     while (inputStream >> word) {
@@ -22,7 +22,7 @@ void Rectangle::setInfo(std::string line) {
             std::string number;
             for (int i = 3; i < word.size() - 1; i++) {
                 number += word[i];
-            }
+        }
             x = atof(number.c_str());
         }
         if (word.find("y=") != std::string::npos) {

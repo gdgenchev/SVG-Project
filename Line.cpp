@@ -7,8 +7,12 @@
 #include <iostream>
 #include <sstream>
 #include <cstring>
+
+Line::Line(){
+    x1 = y1 = 0;
+    x2 = y2 = 100;
+}
 void Line::setInfo(std::string line) {
-    id = 3;
     std::string word;
     std::istringstream inputStream(line);
     while (inputStream >> word) {

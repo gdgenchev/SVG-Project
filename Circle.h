@@ -9,6 +9,7 @@
 class Circle : public Figure {
     double cx,cy,r;
 public:
+    Circle();
     void setInfo(std::string line);
     void print() const;
     void create(std::string line);

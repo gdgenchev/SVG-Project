@@ -7,8 +7,13 @@
 #include <sstream>
 #include <iostream>
 #include <cmath>
+
+Circle::Circle() {
+    cx = cy = 0;
+    r = 5;
+}
+
 void Circle::setInfo(std::string line) {
-    id = 2;
     std::string word;
     std::string line_copy = line;
     std::istringstream inputStream(line);
