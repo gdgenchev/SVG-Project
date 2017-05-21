@@ -19,7 +19,7 @@ public:
     virtual void print() const;
     virtual void translate(std::string line);
     virtual void printToFile(std::ofstream& os);
-    virtual bool isInsideRect (double, double, double, double){};
+    virtual bool isInsideRect (double, double, double, double) {};
     virtual bool isInsideCirc (double, double, double){};
 };
 

@@ -92,15 +92,18 @@ void Circle::printToFile(std::ofstream &os) {
 }
 
 bool Circle::isInsideRect(double x, double y, double width, double height) {
-   if((cx > x && cy > y) && (cx < x + width && cy < y + height)){
-       if((cx - r > x && cy - r > y) && (cx + r < x + width && cy + r < y + height))
-           return true;
-   }
+   if((cx > x && cy > y) && (cx < x + width && cy < y + height)){ //the centre of the circle is inside the rectangle
+            if((cx - r - strokeWidth > x
+                 && cy - r - strokeWidth > y)
+                 && (cx + r + strokeWidth < x + width
+                 && cy + r + strokeWidth < y + height))
+                         return true;
+                }
     return false;
 }
 
 bool Circle::isInsideCirc(double cx, double cy, double r) {
     double distance;
     distance = sqrt(fabs(this->cx - cx) * fabs(this->cx - cx) + fabs(this->cy - cy) * fabs(this->cy - cy));
-    return distance + this->r < r;
+    return distance + this->r + strokeWidth < r;
 }

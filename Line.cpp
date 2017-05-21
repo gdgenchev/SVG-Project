@@ -108,14 +108,17 @@ void Line::printToFile(std::ofstream &os) {
 }
 
 bool Line::isInsideRect(double x, double y, double width, double height) {
-    if((x1 > x && y1 > y) && (x2 > x && y2 > y)) {
-        if ((x1 < x + width && y1 < y + height) && (x2 < x + width && y2 < y + height))
-            return true;
+    if((x1 - strokeWidth > x && y1 - strokeWidth > y)
+       && (x2 - strokeWidth > x && y2 - strokeWidth > y)) {
+            if ((x1 + strokeWidth < x + width && y1 + strokeWidth < y + height
+                 && (x2 + strokeWidth < x + width && y2 + strokeWidth < y + height))
+                        return true;
     }
     return false;
 }
 
-bool Line::isInsideCirc(double cx, double cy, double r) {
+bool Line::isInsideCirc(double cx, double cy, double r){
+        //TO DO
     return ((x1 - cx) * (x1 - cx)) + ((y1 - cy) * (y1 - cy)) < r * r
            && ((x2 - cx) * (x2 - cx)) + ((y2 - cy) * (y2 - cy)) < r * r;
 }

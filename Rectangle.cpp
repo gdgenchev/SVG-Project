@@ -101,8 +101,8 @@ void Rectangle::printToFile(std::ofstream &os) {
         Figure::printToFile(os);
 }
 bool Rectangle::isInsideRect(double x, double y, double width, double height){
-    if ((this->x > x && this->y > y) && (this->x < x + width && this->y < y + height)){
-        if(this->x  + this->width < x + width && this->y + this->height < y + height)
+    if ((this->x - strokeWidth > x && this->y - strokeWidth > y) && (this->x - strokeWidth < x + width && this->y - strokeWidth < y + height)){
+        if(this->x  + this->width + strokeWidth < x + width && this->y + this->height + strokeWidth < y + height)
             return true;
     }
     return false;
@@ -116,14 +116,15 @@ bool Rectangle::isInsideCirc(double cx, double cy, double r) {
     point p2;
     point p3;
     point p4;
-    p1.x = this->x;
-    p1.y = this->y;
-    p2.x = this->x + width;
-    p2.y = this->y;
-    p3.x = this->x;
-    p3.y = this->y + height;
-    p4.x = this->x + width;
-    p4.y = this->y + height;
+    p1.x = this->x - strokeWidth;
+    p1.y = this->y - strokeWidth;
+    p2.x = this->x + width + strokeWidth;
+    p2.y = this->y + strokeWidth;
+    p3.x = this->x - strokeWidth;
+    p3.y = this->y + height + strokeWidth;
+    p4.x = this->x + width + strokeWidth;
+    p4.y = this->y + height + strokeWidth;
+    ///* Pythagorean theorem
     return (((p1.x - cx) * (p1.x - cx) + (p1.y - cy) * (p1.y - cy)) < r * r)
              && (((p2.x - cx)* (p2.x - cx) + (p2.y - cy) * (p2.y - cy)) < r * r)
             && (((p3.x - cx)* (p3.x - cx) + (p3.y - cy) * (p3.y - cy)) < r * r)
