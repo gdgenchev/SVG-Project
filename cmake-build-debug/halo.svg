@@ -3,34 +3,16 @@
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="40cm" height="20cm" viewBox="0 0 1200 700"
      xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <desc>Example rect01 - rectangle with sharp corners</desc>
+  <desc>Created new file</desc>
 
   <!-- Show outline of canvas using 'rect' element -->
-  <line x1="140" y1="420" x2="220" y2="340"
-		stroke="red" stroke-width="2" />
-
-  <circle cx="130" cy="340" r="30"
-		fill="blue" stroke="red" stroke-width="2" />
-
-  <line x1="210" y1="400" x2="310" y2="500"
-		stroke="red" stroke-width="2" />
-
-  <rect x="120" y="320" width="30" height="40"
-		fill="red" stroke="blue" stroke-width="2" />
-
-  <rect x="1710" y="625" width="30" height="40"
-		fill="red" stroke="blue" stroke-width="2" />
-
-  <line x1="200" y1="400" x2="400" y2="600"
-		stroke="red" stroke-width="2" />
-
   <rect x="10" y="20" width="30" height="40"
 		fill="red" stroke="blue" stroke-width="2" />
 
-  <line x1="10" y1="20" x2="30" y2="40"
-		stroke="red" stroke-width="2" />
+  <rect x="9" y="19" width="32" height="42"
+		fill="none" stroke="black" stroke-width="1" />
 
-  <rect x="500" y="300" width="600" height="300"
-		fill="yellow" stroke="blue" stroke-width="7" />
+  <rect x="10" y="20" width="30" height="40"
+		fill="yellow" stroke="blue" stroke-width="3" />
 
 </svg>
